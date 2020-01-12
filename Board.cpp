@@ -5,7 +5,7 @@ using namespace std;
 
 vector<vector<char>> Board; 
 
-vector<int> Row_Size;
+vector<int> Row_Fullness;
 
 
 
