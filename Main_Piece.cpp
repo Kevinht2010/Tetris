@@ -86,6 +86,14 @@ bool Piece::Movement_Check_Helper(vector<int> newmain, vector<int> new_rel_1, ve
 	}
 }
 
+void Piece::Hard_Drop(vector<vector<char>> Board)
+{
+	while (Movement_Check(Board, 'd') == true)
+	{
+		Drop(); 
+	}
+}
+
 void Piece::Rotate(vector<vector<char>> Board)
 {
 	cerr << "Error" << endl;

@@ -6,7 +6,9 @@ using namespace std;
 
 class Piece
 {
-protected:
+public:
+
+	char color; 
 
 	vector<int> main;
 	vector<int> rel_1;
@@ -15,11 +17,10 @@ protected:
 
 	int orientation;
 
-public:
-
 	void Slide_Right();
 	void Slide_Left();
 	void Drop();
+	void Hard_Drop(vector<vector<char>> Board);
 
 	bool Movement_Check(vector<vector<char>> Board, char cmd);
 
@@ -28,5 +29,4 @@ public:
 	virtual void Rotate(vector<vector<char>> Board);
 
 	virtual bool Rotate_Test(vector<vector<char>> Board);
-
 };
