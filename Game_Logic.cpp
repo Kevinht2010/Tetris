@@ -74,7 +74,7 @@ void Update_Score(vector<int> Row_Fullness, int* score)
 
 	for (int i = 3; i < 28; i++)
 	{
-		if (Row_Fullness[i] = 10)
+		if (Row_Fullness[i] == 10)
 		{
 			++rows_cleared;
 		}

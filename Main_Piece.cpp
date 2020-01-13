@@ -88,7 +88,7 @@ bool Piece::Movement_Check_Helper(vector<int> newmain, vector<int> new_rel_1, ve
 
 void Piece::Hard_Drop(vector<vector<char>> Board)
 {
-	while (Movement_Check(Board, 'd') == false)
+	while (Movement_Check(Board, 'd') == true)
 	{
 		Drop(); 
 	}
