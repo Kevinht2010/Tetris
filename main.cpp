@@ -15,9 +15,9 @@ vector<int> Row_Fullness;
 
 int main(void)
 {
-	Board.resize = 29;
+	Board.resize = 30;
 
-	for (int i = 0; i < 29; i++)
+	for (int i = 0; i < 30; i++)
 	{
 		Board[i] = { 'o', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'o' };
 	}

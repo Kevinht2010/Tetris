@@ -71,8 +71,9 @@ void Update_Board(vector<vector<char>>* Board, vector<int>* Row_Fullness)
 void Update_Score(vector<int> Row_Fullness, int* score)
 {
 	int rows_cleared = 0; 
+	int Board_Size = Row_Fullness.size; 
 
-	for (int i = 3; i < 28; i++)
+	for (int i = 3; i < Board_Size; i++)
 	{
 		if (Row_Fullness[i] == 10)
 		{
@@ -104,7 +105,7 @@ void Update_Score(vector<int> Row_Fullness, int* score)
 //Checks if Lost; 
 bool Lost(vector<int> Row_Fullness)
 {
-	if (Row_Fullness[0] > 0 || Row_Fullness[1] > 0 || Row_Fullness[2] > 0)
+	if (Row_Fullness[0] > 0 || Row_Fullness[1] > 0 || Row_Fullness[2] > 0 || Row_Fullness[3] > 0)
 	{
 		return false;
 	}
