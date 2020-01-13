@@ -9,47 +9,47 @@ I_Block::I_Block(vector<int> Position)
 	color = 'c';
 
 	main = { Position[0], Position[1] };
-	rel_1 = { main[0] + 1, main[1] };
-	rel_2 = { main[0] - 1, main[1] };
-	rel_3 = { main[0] - 2, main[1] };
+	rel_1 = { main[0] + 2, main[1] };
+	rel_2 = { main[0] + 1, main[1] };
+	rel_3 = { main[0] - 1, main[1] };
 }
 
 void I_Block::Rotate()
 {
 	if (orientation == 0)
 	{
-		main = { main[0] - 1, main[1] };
-		rel_1 = { main[0], main[1] + 1 };
-		rel_2 = { main[0], main[1] - 1 };
-		rel_3 = { main[0], main[1] - 2 };
+		main = { main[0], main[1] - 1};
+		rel_1 = { main[0], main[1] - 1 };
+		rel_2 = { main[0], main[1] + 1 };
+		rel_3 = { main[0], main[1] + 2 };
 
 		orientation = 1; 
 	}
 	else if (orientation == 1)
 	{
-		main = { main[0], main[1] - 1 };
-		rel_1 = { main[0] - 1, main[1] };
-		rel_2 = { main[0] + 1, main[1] };
-		rel_3 = { main[0] + 2, main[1] }; 
+		main = { main[0] + 1, main[1] };
+		rel_1 = { main[0] + 1, main[1] };
+		rel_2 = { main[0] - 1, main[1] };
+		rel_3 = { main[0] - 2, main[1] }; 
 
 		orientation = 2; 
 	}
 	else if (orientation == 2)
 	{
-		main = { main[0] + 1, main[1] };
-		rel_1 = { main[0], main[1] - 1 };
-		rel_2 = { main[0], main[1] + 1 };
-		rel_3 = { main[0], main[1] + 2 };
+		main = { main[0], main[1] + 1};
+		rel_1 = { main[0], main[1] + 1 };
+		rel_2 = { main[0], main[1] - 1 };
+		rel_3 = { main[0], main[1] - 2 };
 
 		orientation = 3; 
 
 	}
 	else if (orientation == 3)
 	{
-		main = { main[0], main[1] + 1 };
-		rel_1 = { main[0] + 1, main[1] };
-		rel_2 = { main[0] - 1, main[1] };
-		rel_3 = { main[0] - 2, main[1] };
+		main = { main[0] - 1, main[1] };
+		rel_1 = { main[0] - 1, main[1] };
+		rel_2 = { main[0] + 1, main[1] };
+		rel_3 = { main[0] + 2, main[1] };
 
 		orientation = 0; 
 	}
