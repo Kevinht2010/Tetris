@@ -4,6 +4,8 @@
 
 O_Block::O_Block(vector<int> Position)
 {
+	color = 'y'; 
+
 	main = { Position[0], Position[1] };
 	rel_1 = { main[0], main[1] + 1 };
 	rel_2 = { main[0] - 1, main[1] };

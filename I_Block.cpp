@@ -6,6 +6,8 @@ I_Block::I_Block(vector<int> Position)
 {
 	orientation = 0; 
 
+	color = 'c';
+
 	main = { Position[0], Position[1] };
 	rel_1 = { main[0] + 1, main[1] };
 	rel_2 = { main[0] - 1, main[1] };
