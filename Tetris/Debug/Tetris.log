@@ -1,0 +1,32 @@
+﻿生成启动时间为 2020/1/20 16:40:27。
+     1>项目“C:\Users\Rongan Guo\Documents\Visual Studio 2013\Projects\Tetris\Tetris\Tetris.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt game.cpp
+         game.cpp
+     1>c:\users\rongan guo\documents\visual studio 2013\projects\tetris\tetris\game.cpp(5): warning C4305: “初始化”: 从“double”到“float”截断
+     1>c:\users\rongan guo\documents\visual studio 2013\projects\tetris\tetris\game.cpp(6): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+     1>c:\users\rongan guo\documents\visual studio 2013\projects\tetris\tetris\game.cpp(138): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\rongan guo\documents\visual studio 2013\projects\tetris\tetris\game.cpp(140): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\rongan guo\documents\visual studio 2013\projects\tetris\tetris\game.cpp(142): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\rongan guo\documents\visual studio 2013\projects\tetris\tetris\game.cpp(144): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\rongan guo\documents\visual studio 2013\projects\tetris\tetris\game.cpp(157): warning C4244: “参数”: 从“size_t”转换到“float”，可能丢失数据
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Rongan Guo\Documents\Visual Studio 2013\Projects\Tetris\Debug\Tetris.exe" /INCREMENTAL /NOLOGO "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Rongan Guo\Documents\Visual Studio 2013\Projects\Tetris\Debug\Tetris.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Rongan Guo\Documents\Visual Studio 2013\Projects\Tetris\Debug\Tetris.lib" /MACHINE:X86 Debug\Board.obj
+         Debug\Functions.obj
+         Debug\game.obj
+         Debug\Game_Logic.obj
+         Debug\I_Block.obj
+         Debug\J_Block.obj
+         Debug\L_Block.obj
+         Debug\main.obj
+         Debug\Main_Piece.obj
+         Debug\O_Block.obj
+         Debug\S_Block.obj
+         Debug\T_Block.obj
+         Debug\Z_Block.obj
+         Tetris.vcxproj -> C:\Users\Rongan Guo\Documents\Visual Studio 2013\Projects\Tetris\Debug\Tetris.exe
+     1>已完成生成项目“C:\Users\Rongan Guo\Documents\Visual Studio 2013\Projects\Tetris\Tetris\Tetris.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.26

@@ -4,7 +4,7 @@
 
 S_Block::S_Block(vector<int> Position)
 {
-	color = 'g';
+	color = '4';
 
 	main = { Position[0] - 1, Position[1] };
 	rel_1 = { main[0] + 1, main[1] };

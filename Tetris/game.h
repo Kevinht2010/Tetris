@@ -20,7 +20,7 @@ using namespace sf;
 #define shape6 '6'
 #define shape7 '7'
 #define space ' '
-
+#define HIDDEN_ABOVE 4
 class game
 {
 private:
@@ -37,6 +37,7 @@ private:
 	void drop();
 	float timer;
 	float delay;
+	unsigned int color;
 public:
 	bool run(); // run the game
 	game(unsigned int width, unsigned int height);

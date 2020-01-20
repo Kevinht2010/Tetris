@@ -53,21 +53,21 @@ void game::producePiece(unsigned int index){
 		ptr = new J_Block(startPos);
 		break;
 	case 2:
-		ptr = new O_Block(startPos);
+		ptr = new L_Block(startPos);
 		break;
 
 	case 3:
-		ptr = new S_Block(startPos);
+		ptr = new O_Block(startPos);
 		break;
 
 	case 4:
-		ptr = new T_Block(startPos);
+		ptr = new S_Block(startPos);
 		break;
 	case 5:
-		ptr = new Z_Block(startPos);
+		ptr = new T_Block(startPos);
 		break;
 	case 6:
-		ptr = new L_Block(startPos);
+		ptr = new Z_Block(startPos);
 		break;
 
 	default:
@@ -79,24 +79,24 @@ void game::producePiece(unsigned int index){
 unsigned int game::getRandom(unsigned int range){
 	return rand() % 7;
 }
-
 void game::updateWhenLanded(){
+	color = getRandom(7);
 	Update_Row_Fullness(&Row_Fullness, *ptr);
 	Update_Piece(&Board, *ptr);
 	delete ptr;
-	producePiece(getRandom(7));
+	producePiece(color
+		);
 	Update_Board(&Board, &Row_Fullness, width - 2);
 }
 
 
 bool game::run(){
-	RenderWindow window(VideoMode(18*width, 18*(height-1)), "The Game!");
+	RenderWindow window(VideoMode(18 * width, 18 * (height - 1 - HIDDEN_ABOVE)), "The Game!");
 	Texture t1, t2, t3;
 	t1.loadFromFile("images/tiles.png");
 	t2.loadFromFile("images/background.png");
 	t3.loadFromFile("images/frame.png");
 	producePiece(1);
-	int i = 0;
 
 	Clock clock;
 	float timel;
@@ -134,14 +134,14 @@ bool game::run(){
 
 
 		window.clear(Color::White);
-		s.setTextureRect(IntRect(1 * 18, 0, 18, 18));
-		s.setPosition(ptr->main[1] * 18-18, ptr->main[0] * 18);
+		s.setTextureRect(IntRect(color * 18, 0, 18, 18));
+		s.setPosition(ptr->main[1] * 18-18, (ptr->main[0]-HIDDEN_ABOVE) * 18);
 		window.draw(s);
-		s.setPosition(ptr->rel_1[1] * 18-18, ptr->rel_1[0] * 18);
+		s.setPosition(ptr->rel_1[1] * 18 - 18, (ptr->rel_1[0] - HIDDEN_ABOVE) * 18);
 		window.draw(s);
-		s.setPosition(ptr->rel_2[1] * 18-18, ptr->rel_2[0] * 18);
+		s.setPosition(ptr->rel_2[1] * 18 - 18, (ptr->rel_2[0] - HIDDEN_ABOVE) * 18);
 		window.draw(s);
-		s.setPosition(ptr->rel_3[1] * 18-18, ptr->rel_3[0] * 18);
+		s.setPosition(ptr->rel_3[1] * 18 - 18, (ptr->rel_3[0] - HIDDEN_ABOVE) * 18);
 		window.draw(s);
 
 		for (size_t i = 0; i < width; i++)
@@ -151,11 +151,20 @@ bool game::run(){
 			{
 				if (Board[j][i] != ' '&&Board[j][i] != 'o')
 				{
+					if (Board[j][i] <= '6'&&Board[j][i]>='0')
+					{
+						s.setTextureRect(IntRect((Board[j][i]-'0') * 18, 0, 18, 18));
+						s.setPosition(i * 18 - 18, (j-HIDDEN_ABOVE) * 18);
+						window.draw(s);
+					}
 					
-					s.setPosition(i * 18-18, j * 18);
-					window.draw(s);
 				}
 			}
+		}
+
+		if (!Lost(Row_Fullness))
+		{
+			break;
 		}
 
 		window.display();

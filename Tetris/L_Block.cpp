@@ -4,7 +4,7 @@
 
 L_Block::L_Block(vector<int> Position)
 {
-	color = 'j'; 
+	color = '2'; 
 
 	main = { Position[0] - 1, Position[1] };
 	rel_1 = { main[0] + 1, main[1] };

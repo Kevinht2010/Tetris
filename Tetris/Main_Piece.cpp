@@ -82,7 +82,7 @@ bool Piece::Movement_Check(vector<vector<char>> Board, char cmd)
 	// Changes won't stick since the board was not malloc'd; 
 
 	Board[main[0]][main[1]] = ' ';
-	Board[rel_1[0]][rel_2[1]] = ' ';
+	Board[rel_1[0]][rel_1[1]] = ' ';
 	Board[rel_2[0]][rel_2[1]] = ' ';
 	Board[rel_3[0]][rel_3[1]] = ' ';
 

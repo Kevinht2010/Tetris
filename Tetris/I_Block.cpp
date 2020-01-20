@@ -6,7 +6,7 @@ I_Block::I_Block(vector<int> Position)
 {
 	orientation = 0; 
 
-	color = 'c';
+	color = '0';
 
 	main = { Position[0], Position[1] };
 	rel_1 = { main[0] + 2, main[1] };
@@ -64,28 +64,28 @@ bool I_Block::Rotate_Test(vector<vector<char>> Board)
 
 	if (orientation == 0)
 	{
-		main = { main[0] - 1, main[1] };
+		newmain = { main[0] - 1, main[1] };
 		new_rel_1 = { main[0], main[1] + 1 };
 		new_rel_2 = { main[0], main[1] - 1 };
 		new_rel_3 = { main[0], main[1] - 2 };
 	}
 	else if (orientation == 1)
 	{
-		main = { main[0], main[1] - 1 };
+		newmain = { main[0], main[1] - 1 };
 		new_rel_1 = { main[0] - 1, main[1] };
 		new_rel_2 = { main[0] + 1, main[1] };
 		new_rel_3 = { main[0] + 2, main[1] };
 	}
 	else if (orientation == 2)
 	{
-		main = { main[0] + 1, main[1] };
+		newmain = { main[0] + 1, main[1] };
 		new_rel_1 = { main[0], main[1] - 1 };
 		new_rel_2 = { main[0], main[1] + 1 };
 		new_rel_3 = { main[0], main[1] + 2 };
 	}
 	else if (orientation == 3)
 	{
-		main = { main[0], main[1] + 1 };
+		newmain = { main[0], main[1] + 1 };
 		new_rel_1 = { main[0] + 1, main[1] };
 		new_rel_2 = { main[0] - 1, main[1] };
 		new_rel_3 = { main[0] - 2, main[1] };

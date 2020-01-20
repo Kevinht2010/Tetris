@@ -4,7 +4,7 @@
 
 Z_Block::Z_Block(vector<int> Position)
 {
-	color = 'r'; 
+	color = '6'; 
 
 	main = { Position[0] - 1, Position[1] };
 	rel_1 = { main[0] + 1, main[1] };
