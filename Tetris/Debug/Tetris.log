@@ -1,19 +1,35 @@
-﻿生成启动时间为 1/23/2020 12:19:42 AM。
+﻿生成启动时间为 1/23/2020 12:53:06 AM。
      1>项目“C:\Users\Rongan Guo\Desktop\Tetris\Tetris\Tetris.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt game.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Game_Logic.cpp I_Block.cpp J_Block.cpp L_Block.cpp Main_Piece.cpp O_Block.cpp S_Block.cpp T_Block.cpp Z_Block.cpp game.cpp main.cpp
          game.cpp
      1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(7): warning C4305: “初始化”: 从“double”到“float”截断
      1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(9): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(158): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(160): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(162): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(164): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(177): warning C4244: “参数”: 从“size_t”转换到“float”，可能丢失数据
-     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(185): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(187): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(189): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(191): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(135): warning C4305: “参数”: 从“int”到“char”截断
+     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(135): warning C4309: “参数”: 截断常量值
+     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(165): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(167): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(169): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(171): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(184): warning C4244: “参数”: 从“size_t”转换到“float”，可能丢失数据
+     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(192): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(194): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(196): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\rongan guo\desktop\tetris\tetris\game.cpp(198): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+         Main_Piece.cpp
+         正在生成代码...
+         正在编译...
+         Z_Block.cpp
+         T_Block.cpp
+         S_Block.cpp
+         O_Block.cpp
+         L_Block.cpp
+         J_Block.cpp
+         I_Block.cpp
+         正在生成代码...
+         正在跳过...(未检测到相关更改)
+         main.cpp
+         Game_Logic.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Rongan Guo\Desktop\Tetris\Debug\Tetris.exe" /INCREMENTAL /NOLOGO "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Rongan Guo\Desktop\Tetris\Debug\Tetris.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Rongan Guo\Desktop\Tetris\Debug\Tetris.lib" /MACHINE:X86 Debug\Board.obj
          Debug\Functions.obj
@@ -33,4 +49,4 @@
 
 生成成功。
 
-已用时间 00:00:01.67
+已用时间 00:00:05.74

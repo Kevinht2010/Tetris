@@ -87,12 +87,13 @@ void game::updateWhenLanded(){
 	Update_Row_Fullness(&Row_Fullness, *ptr);
 	Update_Piece(&Board, *ptr);
 	delete ptr;
-	producePiece(color
-		);
+	producePiece(color);
 	Update_Score(Row_Fullness, &score,width-2);
 	printf("%d\n", score);
 	Update_Board(&Board, &Row_Fullness, width - 2);
 }
+
+
 
 
 bool game::run(){
@@ -128,12 +129,18 @@ bool game::run(){
 			}
 			else if (e.key.code == Keyboard::E){
 				auto position = ptr->main;
-				delete ptr;
-				producePiece(backup->color - '0', position);
-				position = backup->main;
-				delete backup;
-				producePiece(color, a, backup);
-				color = ptr->color - '0';
+				//delete ptr;
+				Piece* temp;
+				producePiece(backup->color - '0', position, temp);
+				if (ptr->Movement_Check_Swap(Board,'swap',temp))
+				{
+					delete ptr;
+					ptr = temp;
+					delete backup;
+					producePiece(color, a, backup);
+					color = ptr->color - '0';
+				}
+
 				if (!(ptr->Movement(Board, 'd'))){
 					updateWhenLanded();
 				}

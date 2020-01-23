@@ -89,6 +89,24 @@ bool Piece::Movement_Check(vector<vector<char>> Board, char cmd)
 	return Movement_Check_Helper(newmain, new_rel_1, new_rel_2, new_rel_3, Board);
 }
 
+bool Piece::Movement_Check_Swap(vector<vector<char>> Board, char cmd, Piece* newOne)
+{
+	vector<int> newmain;
+	vector<int> new_rel_1;
+	vector<int> new_rel_2;
+	vector<int> new_rel_3;
+
+	// Temporarily change the values @ the original main, rel_1, rel_2, and rel_3 to make it easier to check 
+	// Changes won't stick since the board was not malloc'd; 
+
+	Board[main[0]][main[1]] = ' ';
+	Board[rel_1[0]][rel_1[1]] = ' ';
+	Board[rel_2[0]][rel_2[1]] = ' ';
+	Board[rel_3[0]][rel_3[1]] = ' ';
+
+	return Movement_Check_Helper(newOne->main, newOne->rel_1, newOne->rel_2, newOne->rel_3, Board);
+}
+
 bool Piece::Movement_Check_Helper(vector<int> newmain, vector<int> new_rel_1, vector<int> new_rel_2, vector<int> new_rel_3, vector<vector<char>> Board)
 {
 	char main_val = Get_Char(newmain, Board);

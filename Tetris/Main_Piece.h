@@ -25,6 +25,8 @@ public:
 
 	bool Movement_Check_Helper(vector<int> newmain, vector<int> new_rel_1, vector<int> new_rel_2, vector<int> new_rel_3, vector<vector<char>> Board);
 
+	bool Movement_Check_Swap(vector<vector<char>> Board, char cmd, Piece* newOne);
+
 	bool Movement(vector<vector<char>> Board, char cmd);
 
 	virtual void Rotate();
