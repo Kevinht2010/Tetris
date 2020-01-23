@@ -16,9 +16,8 @@ public:
 	vector<int> rel_3;
 
 	int orientation;
-
 	void Slide_Right();
-	void Slide_Left();  
+	void Slide_Left();
 	void Drop();
 	void Hard_Drop(vector<vector<char>> Board);
 

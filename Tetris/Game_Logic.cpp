@@ -78,23 +78,20 @@ void Update_Board(vector<vector<char>>* Board, vector<int>* Row_Fullness, unsign
 }
 
 //Updates Score 
-void Update_Score(vector<int> Row_Fullness, int* score)
+void Update_Score(vector<int> Row_Fullness, unsigned int* score,unsigned int width)
 {
 	int rows_cleared = 0; 
 	int Board_Size = Row_Fullness.size(); 
 
 	for (int i = 3; i < Board_Size; i++)
 	{
-		if (Row_Fullness[i] == 10)
+		if (Row_Fullness[i] == width)
 		{
 			++rows_cleared;
 		}
 	}
 
-	if (rows_cleared == 0)
-	{
-	}
-	else if (rows_cleared == 1)
+	if (rows_cleared == 1)
 	{
 		(*score) = (*score) + 40;
 	}

@@ -28,11 +28,13 @@ private:
 	vector<int> Row_Fullness;
 	void initAry(); //init Board and row fullness ary
 	unsigned int getRandom(unsigned int range);//get a number between 0 - range
-	void producePiece(unsigned int index); // get a random piece
-	Piece* ptr;
+	static vector<int> startPos;
+	void producePiece(unsigned int index, vector<int> startPos = startPos, Piece*& ptr = ptr); // get a random piece
+	static Piece* ptr;
+	Piece* backup;
+	unsigned int score;
 	unsigned int width;
 	unsigned int height;
-	vector<int> startPos;
 	void updateWhenLanded();
 	void drop();
 	float timer;

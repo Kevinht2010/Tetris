@@ -1,8 +1,11 @@
 #include "game.h"
 #include <time.h>
 
-game::game(unsigned int width, unsigned int height) :width(width), height(height), startPos({ 2, 3 }), delay(0.3)
+ vector<int> game::startPos;
+ Piece* game::ptr;
+game::game(unsigned int width, unsigned int height) :width(width), height(height), delay(0.3), score(0)
 {
+	startPos = { 2, 3 };
 	srand(time(0));
 	initAry();
 }
@@ -43,7 +46,7 @@ void game::initAry(){
 }
 
 
-void game::producePiece(unsigned int index){
+void game::producePiece(unsigned int index, vector<int> startPos, Piece*& ptr){
 	switch (index)
 	{
 	case 0:
@@ -86,18 +89,23 @@ void game::updateWhenLanded(){
 	delete ptr;
 	producePiece(color
 		);
+	Update_Score(Row_Fullness, &score,width-2);
+	printf("%d\n", score);
 	Update_Board(&Board, &Row_Fullness, width - 2);
 }
 
 
 bool game::run(){
-	RenderWindow window(VideoMode(18 * width, 18 * (height - 1 - HIDDEN_ABOVE)), "The Game!");
+	RenderWindow window(VideoMode(18 * (width+4), 18 * (height - 1 - HIDDEN_ABOVE)), "The Game!");
 	Texture t1, t2, t3;
 	t1.loadFromFile("images/tiles.png");
 	t2.loadFromFile("images/background.png");
 	t3.loadFromFile("images/frame.png");
 	producePiece(1);
-
+	vector<int> a;
+	a.push_back(7);
+	a.push_back(width + 2);
+	backup = new S_Block(a);
 	Clock clock;
 	float timel;
 	while (window.isOpen()){
@@ -117,6 +125,18 @@ bool game::run(){
 			else if (e.key.code == Keyboard::Down) {
 				ptr->Hard_Drop(Board);
 				updateWhenLanded();
+			}
+			else if (e.key.code == Keyboard::E){
+				auto position = ptr->main;
+				delete ptr;
+				producePiece(backup->color - '0', position);
+				position = backup->main;
+				delete backup;
+				producePiece(color, a, backup);
+				color = ptr->color - '0';
+				if (!(ptr->Movement(Board, 'd'))){
+					updateWhenLanded();
+				}
 			}
 
 	}
@@ -161,6 +181,15 @@ bool game::run(){
 				}
 			}
 		}
+		s.setTextureRect(IntRect((backup->color-'0') * 18, 0, 18, 18));
+		s.setPosition(backup->main[1] * 18, (backup->main[0] - HIDDEN_ABOVE) * 18);
+		window.draw(s);
+		s.setPosition(backup->rel_1[1] * 18, (backup->rel_1[0] - HIDDEN_ABOVE) * 18);
+		window.draw(s);
+		s.setPosition(backup->rel_2[1] * 18, (backup->rel_2[0] - HIDDEN_ABOVE) * 18);
+		window.draw(s);
+		s.setPosition(backup->rel_3[1] * 18, (backup->rel_3[0] - HIDDEN_ABOVE) * 18);
+		window.draw(s);
 
 		if (!Lost(Row_Fullness))
 		{

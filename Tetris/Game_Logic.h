@@ -18,7 +18,7 @@ void Shift_Down_Board(vector<vector<char>>* Board, int row_number);
 void Shift_Down_RowFullness(vector<int>* Row_Fullness, int row_number);
 
 //Updates the Score (Use after block lands)
-void Update_Score(vector<int> Row_Fullness, int* score);
+void Update_Score(vector<int> Row_Fullness, unsigned int* score,unsigned int width);
 
 //Uses Shift_Down_Bard and Shift_Down_Row_Fullness to update board (Use after Update_Score
 // and Update_Row_Fullness)
